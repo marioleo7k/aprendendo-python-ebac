@@ -1,7 +1,7 @@
 import pandas as pd  # Importa a biblioteca pandas para manipulação de dados
 
 # Ler o arquivo CSV
-df = pd.read_csv("./introducao_tratamento_dados/clientes.csv")  # Lê o arquivo CSV 'clientes.csv' da subpasta especificada e armazena o conteúdo no DataFrame df
+df = pd.read_csv("./tratamento_de_dados/clientes.csv")  # Lê o arquivo CSV 'clientes.csv' da subpasta especificada e armazena o conteúdo no DataFrame df
 
 print(df.columns)  # Isso vai mostrar todas as colunas presentes no DataFrame
 
@@ -27,6 +27,12 @@ df["idade_corrigida"] = df["idade"].fillna(df["idade"].mean())  # Substitui valo
 # Tratar formato de datas
 df["data_corrigida"] = pd.to_datetime(df["data"], format="%d/%m/%Y", errors="coerce")  # Converte a coluna 'data' para o formato de data específico, com o formato dia/mês/ano. Caso algum erro ocorra, a célula será preenchida com NaT (Not a Time)
 
+# Verificar se há datas inválidas e tentar corrigi-las
+invalid_dates = df["data_corrigida"].isna()
+if invalid_dates.any():
+    print("Datas inválidas encontradas, tentando corrigir...")
+    df.loc[invalid_dates, "data_corrigida"] = pd.to_datetime(df.loc[invalid_dates, "data"], errors="coerce")  # Tenta converter novamente as datas inválidas sem especificar o formato
+
 # Tratar valores duplicados
 if "CPF" in df.columns:  # Verifica se a coluna 'CPF' existe no DataFrame
     df.drop_duplicates(subset="CPF", inplace=True)  # Remove as duplicatas da coluna 'CPF' (caso haja registros duplicados)
@@ -39,7 +45,7 @@ df["data"] = df["data_corrigida"]  # Substitui a coluna 'data' pela 'data_corrig
 df["idade"] = df["idade_corrigida"]  # Substitui a coluna 'idade' pela 'idade_corrigida' no DataFrame
 
 df_salvar = df[["nome", "cpf", "idade", "data", "endereco", "estado"]]  # Cria um novo DataFrame apenas com as colunas relevantes para salvar
-df_salvar.to_csv("./introducao_tratamento_dados/clientes_limpeza.csv", index=False)  # Salva o novo DataFrame 'df_salvar' no arquivo CSV 'clientes_limpeza.csv' na subpasta especificada, sem o índice
+df_salvar.to_csv("./tratamento_de_dados/clientes_limpeza.csv", index=False)  # Salva o novo DataFrame 'df_salvar' no arquivo CSV 'clientes_limpeza.csv' na subpasta especificada, sem o índice
 
 print("Novo DataFrame salvo com sucesso:")  # Exibe uma mensagem indicando que o novo DataFrame foi salvo
-print(pd.read_csv("./introducao_tratamento_dados/clientes_limpeza.csv"))  # Lê e exibe o conteúdo do arquivo CSV recém-salvo para verificar se foi salvo corretamente
+print(pd.read_csv("./tratamento_de_dados/clientes_limpeza.csv"))  # Lê e exibe o conteúdo do arquivo CSV recém-salvo para verificar se foi salvo corretamente
