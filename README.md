@@ -52,4 +52,4 @@ Sinta-se à vontade para sugerir melhorias ou abrir uma issue. Este repositório
 Este projeto está sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
-✍️ **Criado por [MarioLeo7K](https://github.com/marioleo7k)**
+✍️ **Criado por [marioleo7k](https://github.com/marioleo7k)**
