@@ -2,20 +2,24 @@
 
 Este repositório contém arquivos e scripts desenvolvidos ao longo do curso de **Python para Análise de Dados** da **EBAC**. O objetivo é documentar minha jornada de aprendizado e compartilhar códigos úteis para quem deseja aprimorar suas habilidades em Python.
 
+---
+
 ## 📂 Estrutura do Repositório
 
 A estrutura de arquivos do repositório está organizada da seguinte forma:
 
 ```
-📦 aprendendo-python-ebac
-├── 📂 coleta_de_dados                      # Módulo 1
-├── 📂 tratamento_de_dados                  # Módulo 2
-├── 📂 preparacao_de_dados                  # Módulo 3
-├── 📂 estatistica_de_dados                 # Módulo 4
-├── 📂 visualizacao_de_dados                # Módulo 5
-├── 📂 visualizacao_de_dados_avancado       # Módulo 6
-└── 📜 README.md                            # Documentação do projeto
+aprendendo-python-ebac
+├── coleta_de_dados                      # Módulo 1
+├── tratamento_de_dados                  # Módulo 2
+├── preparacao_de_dados                  # Módulo 3
+├── estatistica_de_dados                 # Módulo 4
+├── visualizacao_de_dados                # Módulo 5
+├── visualizacao_de_dados_avancado       # Módulo 6
+└── README.md                            # Documentação do projeto
 ```
+
+---
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -27,6 +31,8 @@ A estrutura de arquivos do repositório está organizada da seguinte forma:
 - Plotly
 - Scikit-learn
 - Outros pacotes relevantes para análise de dados
+
+---
 
 ## 📌 Como Utilizar
 
@@ -42,14 +48,17 @@ A estrutura de arquivos do repositório está organizada da seguinte forma:
    ```sh
    pip install -r requirements.txt
    ```
+   
+---
 
-## 📝 Contribuição
+## ⚖️ **Licença**
 
-Sinta-se à vontade para sugerir melhorias ou abrir uma issue. Este repositório serve como um registro de aprendizado, mas estou aberto a feedbacks e colaborações! 😊
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
 
 ---
-✍️ **Criado por [marioleo7k](https://github.com/marioleo7k)**
+
+## 💬 **Contato**
+
+Para dúvidas ou feedback:
+- **LinkedIn**: [Mario Leonardo da Silva](https://www.linkedin.com/in/marioleo7k/)
+- **E-mail**: marioleo7k@icloud.com
